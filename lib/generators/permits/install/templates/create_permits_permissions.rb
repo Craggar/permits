@@ -1,4 +1,4 @@
-class CreatePermitPermissions < ActiveRecord::Migration[7.1]
+class CreatePermitsPermissions < ActiveRecord::Migration[7.1]
   def change
     create_table :permits_permissions, id: :uuid do |t|
       t.string :owner_id, null: false
