@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :permit do
+# task :permits do
 #   # Task goes here
 # end

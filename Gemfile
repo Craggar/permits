@@ -1,12 +1,28 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# Specify your gem's dependencies in permit.gemspec.
+# Specify your gem's dependencies in permits.gemspec.
 gemspec
 
-gem "puma"
+group :test do
+  # Use DatabaseCleaner for specs
+  gem "database_cleaner"
 
-gem "sqlite3"
+  # Add factory_bot_rails for fixtures
+  gem "factory_bot_rails"
 
-# Start debugger with binding.b [https://github.com/ruby/debug]
-# gem "debug", ">= 1.0.0"
+  # Add faker for fake data
+  gem "faker"
+
+  # Use postgresql as the database for Active Record
+  gem "pg"
+
+  # Shoulda Matchers for specs
+  gem "shoulda-matchers"
+
+  # SimpleCov to check code coverage
+  gem "simplecov", require: false
+
+  # Use tzinfo-data for timezone data
+  gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+end

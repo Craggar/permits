@@ -1,0 +1,2 @@
+Description:
+    Copies the Database migration file to your application's db/migrate directory.
