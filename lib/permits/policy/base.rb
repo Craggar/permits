@@ -37,10 +37,10 @@ module Permits
 
       private
 
-      def has_action_permissions?(action)
+      def has_action_permissions?(action, for_resource: resource)
         return false unless owner_permissions.respond_to?("permits_#{action}")
 
-        return owner_permissions.send("permits_#{action}").where(resource: resource).exists?
+        return owner_permissions.send("permits_#{action}").where(resource: for_resource).exists?
       end
 
       def owner_permissions
