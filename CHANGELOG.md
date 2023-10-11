@@ -1,5 +1,9 @@
 # Permits
 
+## 0.1.4 (2023-10-11)
+### Fixed
+- Migrations should use `reference` to generate `uuid` columns for ids instead of strings.
+
 ## 0.1.3 (2023-10-10)
 ### Added
 Added an optional `for_resource:` named parameter to `Permits::Policy::Base#has_action_permissions?` to allow passing in another resource to check permissions for. This is useful for checking permissions for a resource that is not the one being acted upon.

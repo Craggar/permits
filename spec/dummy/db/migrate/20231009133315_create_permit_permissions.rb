@@ -1,10 +1,8 @@
 class CreatePermitPermissions < ActiveRecord::Migration[7.1]
   def change
     create_table :permits_permissions, id: :uuid do |t|
-      t.string :owner_id, null: false
-      t.string :owner_type, null: false
-      t.string :resource_id, null: false
-      t.string :resource_type, null: false
+      t.references :owner, polymorphic: true, null: false, type: :uuid
+      t.references :resource, polymorphic: true, null: false, type: :uuid
       t.string :permits, null: false
 
       t.datetime :started_at
