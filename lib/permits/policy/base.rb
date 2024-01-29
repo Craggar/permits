@@ -29,7 +29,7 @@ module Permits
         return false unless valid?
 
         if respond_to?("#{action}?")
-          return send("#{action}?")
+          send("#{action}?")
         else
           has_action_permissions?(action)
         end
@@ -40,7 +40,7 @@ module Permits
       def has_action_permissions?(action, for_resource: resource)
         return false unless owner_permissions.respond_to?("permits_#{action}")
 
-        return owner_permissions.send("permits_#{action}").where(resource: for_resource).exists?
+        owner_permissions.send("permits_#{action}").where(resource: for_resource).exists?
       end
 
       def owner_permissions

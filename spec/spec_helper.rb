@@ -1,11 +1,11 @@
-require 'dotenv/load'
-require 'simplecov'
+require "dotenv/load"
+require "simplecov"
 
 SimpleCov.start "rails" do
-  add_filter 'spec/'
-  add_filter '.github/'
-  add_filter 'lib/generators/permits/'
-  add_filter 'lib/permits/version'
+  add_filter "spec/"
+  add_filter ".github/"
+  add_filter "lib/generators/permits/"
+  add_filter "lib/permits/version"
 
   formatter SimpleCov::Formatter::MultiFormatter.new([
     SimpleCov::Formatter::SimpleFormatter,
@@ -14,9 +14,9 @@ SimpleCov.start "rails" do
 end
 
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].sort.each { |f| require f }
-ENV['RAILS_ENV'] = 'test'
-require_relative '../spec/dummy/config/environment'
-ENV['RAILS_ROOT'] ||= "#{File.dirname(__FILE__)}../../../spec/dummy"
+ENV["RAILS_ENV"] = "test"
+require_relative "../spec/dummy/config/environment"
+ENV["RAILS_ROOT"] ||= "#{File.dirname(__FILE__)}../../../spec/dummy"
 
 require "factory_bot_rails"
 RSpec.configure do |config|
@@ -34,7 +34,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
-FactoryBot.definition_file_paths << File.join(File.dirname(__FILE__), 'factories')
+FactoryBot.definition_file_paths << File.join(File.dirname(__FILE__), "factories")
 FactoryBot.find_definitions
 
 Shoulda::Matchers.configure do |config|

@@ -41,5 +41,4 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_09_133315) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 end

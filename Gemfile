@@ -24,5 +24,5 @@ group :test do
   gem "simplecov", require: false
 
   # Use tzinfo-data for timezone data
-  gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+  gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 end
