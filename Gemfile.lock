@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    permits (0.1.4)
+    permits (0.2.0)
       aasm (~> 5.5.0)
       rails (~> 7.1)
       timelines (~> 0.1)
