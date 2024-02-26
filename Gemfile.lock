@@ -2,12 +2,15 @@ PATH
   remote: .
   specs:
     permits (0.1.4)
+      aasm (~> 5.5.0)
       rails (~> 7.1)
       timelines (~> 0.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.5.0)
+      concurrent-ruby (~> 1.0)
     actioncable (7.1.0)
       actionpack (= 7.1.0)
       activesupport (= 7.1.0)
