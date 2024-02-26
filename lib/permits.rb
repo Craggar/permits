@@ -1,6 +1,7 @@
 require "active_support/configurable"
 require "aasm"
 require "permits/concerns/has_permissions"
+require "permits/forms/new_invite"
 require "permits/invite"
 require "permits/permission"
 require "permits/policy/unauthorized_error"

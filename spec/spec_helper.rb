@@ -45,5 +45,5 @@ Shoulda::Matchers.configure do |config|
 end
 
 Permits.configure do |config|
-  config.permits = %i[super_user read edit create destroy]
+  config.permits = %i[super_user read edit create destroy invite]
 end
