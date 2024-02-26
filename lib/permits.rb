@@ -1,9 +1,13 @@
-require "permits/version"
-require "permits/railtie"
-require "permits/permission"
-require "permits/policy/base"
-require "permits/policy/unauthorized_error"
 require "active_support/configurable"
+require "aasm"
+require "permits/concerns/has_permissions"
+require "permits/invite"
+require "permits/permission"
+require "permits/policy/unauthorized_error"
+require "permits/policy/base"
+require "permits/railtie"
+require "permits/version"
+require "timelines"
 
 module Permits
   include ActiveSupport::Configurable

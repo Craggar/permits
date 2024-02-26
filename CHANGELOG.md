@@ -1,5 +1,10 @@
 # Permits
 
+## 0.2.0 (2024-02-26)
+### Added
+- Added `Permits::Invite` - an invite that can be pre-loaded with permissions and roles for an invitee
+- Added `Permits::HasPermissions` concern to add permissions associations to a model
+
 ## 0.1.4 (2023-10-11)
 ### Fixed
 - Migrations should use `reference` to generate `uuid` columns for ids instead of strings.

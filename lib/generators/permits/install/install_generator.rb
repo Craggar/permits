@@ -5,6 +5,7 @@ module Permits
 
       def copy_application_policy
         template "create_permits_permissions.rb", "db/migrate/#{Time.current.strftime("%Y%m%d%H%M%S")}_create_permits_permissions.rb"
+        template "create_permits_invites.rb", "db/migrate/#{Time.current.strftime("%Y%m%d%H%M%S")}_create_permits_invites.rb"
       end
     end
   end
