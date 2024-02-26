@@ -76,6 +76,23 @@ CustomPolicy.authorize!(owner, resource, :some_action)
 CustomPolicy.authorized?(owner, resource, :some_action)
 ```
 
+### Invites
+`Permits` provides a simple pre-permissioned Invite system, with a `Permits::Invite` model, a `Permits::Form::NewInviteForm` form object for creating new invites, and a `Permits::Form::InviteForm` form object for accepting, declining and revoking invites. Invites can be pre-assigned permissions, so that when the invite is accepted, the invitee is automatically granted the permissions.
+
+```irb
+group = Group.create(name: "Group 1")
+group_user = User.create(name: "User 1")
+user_permission = Permits::Permission.create(owner: group_user, resource: group, action: :super_user)
+
+NewInviteForm.new(
+  invited_by: group_user,
+  email: "invitee@email-address.com",
+  permission_attributes: {
+    group => [:read, :edit]
+  }
+).save!
+```
+
 ## Installation
 Add this line to your application's Gemfile:
 
