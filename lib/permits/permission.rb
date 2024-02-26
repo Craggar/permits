@@ -17,7 +17,7 @@ module Permits
     def permits_is_permissable
       return if Permits.config.permits&.include?(permits&.to_sym)
 
-      errors.add(:permits, "is not a valid permits for #{resource.class}")
+      errors.add(:permits, I18n.t("errors.invalid_permits_param", class: resource.class.name))
     end
 
     scope :permits_any, -> { all }

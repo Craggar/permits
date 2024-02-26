@@ -1,6 +1,6 @@
 module Permits
   module Forms
-    class NewInvite
+    class NewInviteForm
       include ActiveModel::Model
       include ActiveModel::Attributes
       include ActiveModel::Validations
