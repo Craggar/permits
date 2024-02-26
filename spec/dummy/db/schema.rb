@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_09_133315) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_26_134049) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,6 +18,22 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_09_133315) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "permits_invites", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "invited_by_type", null: false
+    t.uuid "invited_by_id", null: false
+    t.string "invitee_type"
+    t.uuid "invitee_id"
+    t.string "email", null: false
+    t.string "aasm_state", null: false
+    t.string "slug", null: false
+    t.datetime "started_at"
+    t.datetime "ended_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["invited_by_type", "invited_by_id"], name: "index_permits_invites_on_invited_by"
+    t.index ["invitee_type", "invitee_id"], name: "index_permits_invites_on_invitee"
   end
 
   create_table "permits_permissions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -41,4 +57,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_09_133315) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 end
