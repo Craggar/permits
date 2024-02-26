@@ -1,8 +1,15 @@
 # Permits
 
+## 1.0.0 (2024-02-26)
+- v1.0.0 release
+
+## 0.4.0 (2024-02-26)
+### Added
+- Added `Permits::Form::InviteForm` - a form object for accepting, declining and revoking invites.
+
 ## 0.3.0 (2024-02-26)
 ### Added
-- Added `Permits::Form::NewInvite` - a form object for creating new invites, that checks that the inviter has the necessary permissions to create the invite
+- Added `Permits::Form::NewInviteForm` - a form object for creating new invites, that checks that the inviter has the necessary permissions to create the invite
 
 ## 0.2.0 (2024-02-26)
 ### Added

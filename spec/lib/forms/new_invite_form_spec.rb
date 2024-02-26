@@ -1,6 +1,6 @@
 module Permits
   module Forms
-    describe NewInvite, type: :model do
+    describe NewInviteForm, type: :model do
       describe "validations" do
         it { should validate_presence_of(:invited_by) }
         it { should validate_presence_of(:email) }
