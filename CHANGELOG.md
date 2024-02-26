@@ -1,5 +1,9 @@
 # Permits
 
+## 0.3.0 (2024-02-26)
+### Added
+- Added `Permits::Form::NewInvite` - a form object for creating new invites, that checks that the inviter has the necessary permissions to create the invite
+
 ## 0.2.0 (2024-02-26)
 ### Added
 - Added `Permits::Invite` - an invite that can be pre-loaded with permissions and roles for an invitee
