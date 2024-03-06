@@ -4,8 +4,13 @@ module Permits
       source_root File.expand_path("templates", __dir__)
 
       def copy_application_policy
-        template "create_permits_permissions.rb", "db/migrate/#{Time.current.strftime("%Y%m%d%H%M%S")}_create_permits_permissions.rb"
-        template "create_permits_invites.rb", "db/migrate/#{Time.current.strftime("%Y%m%d%H%M%S")}_create_permits_invites.rb"
+        [
+          "create_permits_permissions.rb",
+          "create_permits_invites.rb"
+        ].each_with_index do |migration_file, index|
+          timestamp = (Time.current + index + 1).strftime("%Y%m%d%H%M%S")
+          template migration_file, "db/migrate/#{timestamp}_#{migration_file}.rb"
+        end
       end
     end
   end
