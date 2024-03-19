@@ -9,7 +9,7 @@ Set up the valid `permits` values (roles/actions/levels):
 
 # user levels example
 ::Permits.configure do |config|
-  config.permits = %i[admin user super_user]
+  config.permit = %i[admin user super_user]
 end
 
 # user actions example
