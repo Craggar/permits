@@ -18,12 +18,16 @@ module Permits
     def configure
       yield config
 
-      if config.permits
-        config.permits = config.permits.map!(&:to_sym)
-        config.permits.each do |role|
+      if config.permit
+        config.permits ||= []
+        config.permit.each do |role|
+          next if config.permits.include?(role.to_sym)
+          config.permits << role.to_sym
           ::Permits::Permission.scope "permits_#{role}", -> { where(permits: role) }
         end
       end
+
+      config.permit = config.permits
     end
   end
 end
