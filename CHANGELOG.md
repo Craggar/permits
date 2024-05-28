@@ -1,5 +1,11 @@
 # Permits
 
+## 1.1.1 (2024-05-28)
+- Update `timelines` gem from `0.1.3` to `0.3.0`
+
+## 1.1.0 (2024-03-19)
+- `config` changed to addititive instead of destructive to allow more than one engine/plugin/application to configure what they need from `Permits`.
+
 ## 1.0.0 (2024-02-26)
 - v1.0.0 release
 
