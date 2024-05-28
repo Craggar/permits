@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_26_134049) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_28_131534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,9 +52,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_26_134049) do
     t.index ["resource_type", "resource_id"], name: "index_permits_permissions_on_resource"
   end
 
+  create_table "timelines_events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "actor_type"
+    t.uuid "actor_id"
+    t.string "resource_type"
+    t.uuid "resource_id"
+    t.string "event"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_type", "actor_id"], name: "index_timelines_events_on_actor"
+    t.index ["resource_type", "resource_id"], name: "index_timelines_events_on_resource"
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 end
