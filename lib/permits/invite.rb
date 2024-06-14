@@ -4,6 +4,8 @@ module Permits
   class Invite < ActiveRecord::Base
     self.table_name = "permits_invites"
 
+    normalizes :email, with: -> email { email.strip.downcase }
+
     include ::AASM
     include ::Timelines::Ephemeral
     include ::Permits::HasPermissions
