@@ -15,6 +15,11 @@ module Permits
       it "has a valid factory" do
         expect(build(:invite)).to be_valid
       end
+
+      it "normalizes the email" do
+        invite = create(:invite, email: "Case.Sensitive.Email@Address.Com")
+        expect(invite.email).to eq("case.sensitive.email@address.com")
+      end
     end
 
     describe "state machine" do
