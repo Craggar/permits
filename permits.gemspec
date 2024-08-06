@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "aasm", "~> 5.5.0"
   spec.add_dependency "rails", "~> 7.1"
-  spec.add_dependency "timelines", "~> 0.3.0"
+  spec.add_dependency "timelines", ">= 0.3.0"
 
   spec.add_development_dependency "dotenv", "~> 2.8"
   spec.add_development_dependency "rails", "~> 7.1"
