@@ -4,7 +4,7 @@ PATH
     permits (1.1.2)
       aasm (~> 5.5.0)
       rails (~> 7.1)
-      timelines (~> 0.3.0)
+      timelines (>= 0.3.0)
 
 GEM
   remote: https://rubygems.org/
