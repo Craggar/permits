@@ -1,5 +1,8 @@
 # Permits
 
+## 1.1.3 (2024-08-06)
+- Change Timelines requirement from `~> 0.3.0` to `>= 0.3.0` to improve compatibility with other gems
+
 ## 1.1.2 (2024-06-14)
 - normalize email field on Permits::Invites
 
