@@ -1,5 +1,9 @@
 # Permits
 
+## 1.1.4 (2024-08-06)
+- Added optional `for_resource_type` and `for_resource_id` params for `::Permits::Policy::Base#has_action_permissions?`, to allow specifying params (potentially avoiding a database hit if the querying code already knows what a relation type/id may be)
+- Moved the `::Permits::Policy::Base#has_action_permissions?` out of the `private` space into the public interface
+
 ## 1.1.3 (2024-08-06)
 - Change Timelines requirement from `~> 0.3.0` to `>= 0.3.0` to improve compatibility with other gems
 

@@ -112,6 +112,26 @@ module Permits
             it { is_expected.to be false }
           end
         end
+
+        describe "has_action_permissions?" do
+          context "default behavior (checks resource)" do
+            let(:subject) { policy.has_action_permissions?(check_level) }
+
+            it { is_expected.to be true }
+          end
+
+          context "when passed a for_resource param" do
+            let(:subject) { policy.has_action_permissions?(check_level, for_resource: resource) }
+
+            it { is_expected.to be true }
+          end
+
+          context "when passed a for_resource_type and for_resource_id param" do
+            let(:subject) { policy.has_action_permissions?(check_level, for_resource_type: resource.class.name, for_resource_id: resource.id) }
+
+            it { is_expected.to be true }
+          end
+        end
       end
     end
   end
