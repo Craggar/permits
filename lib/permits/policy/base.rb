@@ -35,13 +35,17 @@ module Permits
         end
       end
 
-      private
-
-      def has_action_permissions?(action, for_resource: resource)
+      def has_action_permissions?(action, for_resource: resource, for_resource_type: nil, for_resource_id: nil)
         return false unless owner_permissions.respond_to?("permits_#{action}")
 
-        owner_permissions.send("permits_#{action}").where(resource: for_resource).exists?
+        if for_resource_type && for_resource_id
+          owner_permissions.send("permits_#{action}").where(resource_type: for_resource_type, resource_id: for_resource_id).exists?
+        else
+          owner_permissions.send("permits_#{action}").where(resource: for_resource).exists?
+        end
       end
+
+      private
 
       def owner_permissions
         @owner_permissions ||= ::Permits::Permission.active.where(owner: owner).includes(:resource)
