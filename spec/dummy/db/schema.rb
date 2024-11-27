@@ -46,10 +46,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_28_131534) do
     t.datetime "ended_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ended_at"], name: "index_permits_permissions_on_ended_at"
     t.index ["owner_id", "owner_type"], name: "index_permits_permissions_on_owner_id_and_owner_type"
     t.index ["owner_type", "owner_id"], name: "index_permits_permissions_on_owner"
+    t.index ["permits"], name: "index_permits_permissions_on_permits"
     t.index ["resource_id", "resource_type"], name: "index_permits_permissions_on_resource_id_and_resource_type"
     t.index ["resource_type", "resource_id"], name: "index_permits_permissions_on_resource"
+    t.index ["started_at"], name: "index_permits_permissions_on_started_at"
   end
 
   create_table "timelines_events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

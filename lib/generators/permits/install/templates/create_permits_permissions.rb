@@ -12,5 +12,8 @@ class CreatePermitsPermissions < ActiveRecord::Migration[7.1]
 
     add_index :permits_permissions, [:owner_id, :owner_type]
     add_index :permits_permissions, [:resource_id, :resource_type]
+    add_index :permits_permissions, :started_at
+    add_index :permits_permissions, :ended_at
+    add_index :permits_permissions, :permits
   end
 end

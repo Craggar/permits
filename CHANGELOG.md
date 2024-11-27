@@ -1,5 +1,8 @@
 # Permits
 
+## 1.1.5 (2024-11-27)
+- Added indexes on `started_at`, `ended_at` (used by `Timelines::Ephemeral` for 'active?' checks), and `permits` for `Permits::Permission`
+
 ## 1.1.4 (2024-11-20)
 - Added optional `for_resource_type` and `for_resource_id` params for `::Permits::Policy::Base#has_action_permissions?`, to allow specifying params (potentially avoiding a database hit if the querying code already knows what a relation type/id may be)
 - Moved the `::Permits::Policy::Base#has_action_permissions?` out of the `private` space into the public interface
