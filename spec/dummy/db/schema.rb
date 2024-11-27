@@ -48,6 +48,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_28_131534) do
     t.datetime "updated_at", null: false
     t.index ["ended_at"], name: "index_permits_permissions_on_ended_at"
     t.index ["owner_id", "owner_type"], name: "index_permits_permissions_on_owner_id_and_owner_type"
+    t.index ["owner_type", "owner_id", "resource_type", "resource_id", "permits"], name: "idx_on_owner_type_owner_id_resource_type_resource_i_1cc2eacf54"
+    t.index ["owner_type", "owner_id", "resource_type", "resource_id"], name: "idx_on_owner_type_owner_id_resource_type_resource_i_c2232b0e78"
     t.index ["owner_type", "owner_id"], name: "index_permits_permissions_on_owner"
     t.index ["permits"], name: "index_permits_permissions_on_permits"
     t.index ["resource_id", "resource_type"], name: "index_permits_permissions_on_resource_id_and_resource_type"
