@@ -1,5 +1,8 @@
 # Permits
 
+## 1.1.6 (2024-11-27)
+- Added multi-column indexes on owner+resource and owner+resource+permits for `Permits::Permission`
+
 ## 1.1.5 (2024-11-27)
 - Added indexes on `started_at`, `ended_at` (used by `Timelines::Ephemeral` for 'active?' checks), and `permits` for `Permits::Permission`
 
