@@ -1,5 +1,8 @@
 # Permits
 
+## 1.1.7 (2024-12-16)
+- Changed the Rails `~> 7.1` to a softer `>= 7.1`
+
 ## 1.1.6 (2024-11-27)
 - Added multi-column indexes on owner+resource and owner+resource+permits for `Permits::Permission`
 
