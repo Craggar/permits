@@ -1,5 +1,8 @@
 # Permits
 
+## 1.1.8 (2025-03-04)
+- Update `uri` dependency to address CVE
+
 ## 1.1.7 (2024-12-16)
 - Changed the Rails `~> 7.1` to a softer `>= 7.1`
 
