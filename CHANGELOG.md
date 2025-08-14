@@ -1,5 +1,8 @@
 # Permits
 
+## 1.1.9 (2025-08-14)
+- Version bump for gem dependency updates.
+
 ## 1.1.8 (2025-03-04)
 - Update `uri` dependency to address CVE
 
