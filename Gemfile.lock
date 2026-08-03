@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    permits (1.1.9)
+    permits (1.1.10)
       aasm (~> 5.5.0)
       rails (>= 7.1)
       timelines (>= 0.3.0)
@@ -256,7 +256,7 @@ DEPENDENCIES
   rspec (~> 3.4)
   rspec-rails (~> 4.0)
   shoulda-matchers
-  simplecov (~> 0.21, >= 0)
+  simplecov
   tzinfo-data
 
 BUNDLED WITH

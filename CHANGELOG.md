@@ -1,5 +1,8 @@
 # Permits
 
+## 1.1.20 (2026-08-03)
+- Version bump for gem dependency updates.
+
 ## 1.1.9 (2025-08-14)
 - Version bump for gem dependency updates.
 
