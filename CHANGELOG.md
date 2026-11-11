@@ -1,6 +1,10 @@
 # Permits
 
-## 1.1.20 (2026-08-03)
+## 1.1.11 (2026-11-11)
+- Fix rspec for Ruby 3.4+
+- Version bump for gem dependency updates.
+
+## 1.1.10 (2026-08-03)
 - Version bump for gem dependency updates.
 
 ## 1.1.9 (2025-08-14)

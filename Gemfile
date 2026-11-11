@@ -14,6 +14,9 @@ group :test do
   # Add faker for fake data
   gem "faker"
 
+  # Add observer
+  gem 'observer'
+
   # Use postgresql as the database for Active Record
   gem "pg"
 
